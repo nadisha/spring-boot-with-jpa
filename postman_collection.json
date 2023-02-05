@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "924f48c5-4322-42f8-aa88-3563801cc11e",
+		"name": "Nadisha - JPA Demo with Spring Boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save a Student with Books",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Simon\",\n    \"lastName\": \"Sinek\",\n    \"email\": \"simon.sinek@gmail.com\",\n    \"age\": 55,\n    \"books\": [\n        {\n            \"bookName\": \"Introduction To JAVA\"\n        },\n        {\n            \"bookName\": \"Angular for Dummies\"   \n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/students"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all students excluding books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/students"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all students excluding books by age",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/students?age=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"students"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save a book and assign to a student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookName\": \"HTML in 24 Hours\",\n    \"student\": {\n        \"id\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a card id by for a student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cardNumber\": \"123-456-7890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/students/1/student-id-card"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a student detail with associated books and student card id.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/students/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Save a new course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"JAVA\",\n    \"department\": \"IT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "Get course by course name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/courses?name=JAVA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "JAVA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get course by course name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"studentId\": 1,\n    \"courseId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/enrolments"
+			},
+			"response": []
+		},
+		{
+			"name": "Get enrolments by course",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/enrolments/courses/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get enrolments by student",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/enrolments/students/1"
+			},
+			"response": []
+		}
+	]
+}
