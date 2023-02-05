@@ -9,6 +9,9 @@
 * Create Indexes
 * Create unique key constraints
 
+## How to run?
+Pull the code and change the database connection properties in application.properties file
+
 ## Entity Relationship Diagram
 ![alt text](https://github.com/nadisha/spring-boot-with-jpa/blob/main/ERD.jpg?raw=true)
 
