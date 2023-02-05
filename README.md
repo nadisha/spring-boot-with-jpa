@@ -3,7 +3,7 @@
 
 
 ## Entity Relationship Diagram
-![alt text](https://github.com/nadisha/spring-boot-with-jpa/ERD.jpg?raw=true)
+![alt text](https://github.com/nadisha/spring-boot-with-jpa/blob/main/ERD.jpg?raw=true)
 
 
 ## Add your files
