@@ -36,7 +36,7 @@ public class CourseController {
 		if (courseName == null) {
 			courses = service.getAll();
 		} else {
-			courses = service.getByName(courseName);
+			courses = service.getByName(courseName.toLowerCase());
 		}
 		
 		List<CourseDto> courseDtos = new ArrayList<>();
